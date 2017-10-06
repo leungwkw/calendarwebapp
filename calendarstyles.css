@@ -1,0 +1,210 @@
+body {
+	width: 900px;
+	background-color: teal;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 15px;
+}
+
+#pageheader, #userdivpt1, #userdivpt2, #message, #yearheader, #monthheader, #prevnextbtnsdiv {
+	text-align: center;
+}
+
+#pageheader {
+	margin-bottom: 5px;
+}
+
+#userdisp, #usernameinput, #passwordinput, #newusernameinput, #newpasswordinput, #retypepasswordinput {
+	display: none;
+}
+
+#userdisp, #message, #monthheader {
+	margin-top: 0;
+}
+
+#backbtn, #actsigninbtn, #actsignupbtn, #signoutbtn, #message {
+	visibility: hidden;
+}
+
+#backbtn {
+	width: 55px;
+}
+
+#yearheader {
+	margin-bottom: 5px;
+}
+
+#agendaviewbtndiv, #calendarviewbtndiv {
+	display: none;
+	text-align: center;
+}
+
+#prevnextbtnsdiv {
+	margin: 5px;
+}
+
+#prevbtn, #nextbtn {
+	width: 115px;
+	display: inline-block;
+}
+
+#caltable {
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid black;
+	width: 800px;
+}
+
+#caltable th, #caltable td {
+	border: 1px solid black;
+	margin: 3px;
+}
+
+#caltable th {
+	padding: 10px;
+	width: 14%;
+}
+
+#caltable td {
+	vertical-align: top;
+	height: 75px;
+}
+
+td div {
+	font-size: 80%;
+}
+
+#categoriesdivpt1, #categoriesdivpt2 {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3px;
+	padding-left: 4px;
+	padding-right: 4px;
+	width: 800px;
+	text-align: center;
+}
+
+#categoriesdivpt1 div {
+	display: inline-block;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+#editcategorybtn {
+	width: 128px;
+}
+
+#categoriesdivpt2 div {
+	margin-bottom: 3px;
+}
+
+#altercategoriesdivpt2, #altercategoriesdivpt3, #categoriesbackbtn {
+	display: none;
+}
+
+#editcategorieserrormessage {
+	visibility: hidden;
+	margin-top: 2px;
+	margin-bottom: 3px;
+	font-size: 80%;
+}
+
+#agendatable {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	width: 800px;
+}
+
+#agendatable th, #agendatable td {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 3px;
+}
+
+.agendadate {
+	width: 15%;
+	font-weight: bold;
+}
+
+.agendatime {
+	width: 15%;
+}
+
+.agendaeventname {
+	width: 40%;
+	font-weight: bold;
+}
+
+.agendacategory {
+	width: 30%;
+}
+
+#popup {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	border: 1px solid black;
+	border-radius: 9px;
+	width: 200px;
+	background-color: #FFFFFF;
+	overflow: auto;
+}
+
+#popupheader, #neweventdiv {
+	text-align: center;
+}
+
+#popupheader {
+	margin-top: 7px;
+	margin-bottom: 0;
+}
+
+#eventtable {
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+	width: 88%;
+}
+
+.eventtime {
+	border-radius: 6px 0 0 6px;
+	padding-right: 4px;
+	background-color: #D3D3D3;
+	width: 27%;
+	font-size: 80%;
+	text-align: right;
+}
+
+.eventname {
+	border-radius: 0 6px 6px 0;
+	padding-left: 4px;
+	background-color: #D3D3D3;
+	width: 73%;
+}
+
+#neweventnameinput {
+	width: 88%;
+}
+
+#createeventbtn {
+	margin-bottom: 4px;
+}
+
+#editeventbtn, #deleteeventbtn, #shareeventinput, #shareeventbtn {
+	display: none;
+	margin-bottom: 4px;
+}
+
+#errormessage {
+	display: none;
+	margin-top: 0;
+	margin-bottom: 3px;
+	font-size: 80%;
+}
+
+#categoryselectlabel {
+	font-size: 80%;
+}

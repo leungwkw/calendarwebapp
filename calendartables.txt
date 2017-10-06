@@ -1,0 +1,27 @@
+CREATE TABLE users (
+	username VARCHAR(20) NOT NULL,
+	crypted_password VARCHAR(80) NOT NULL,
+	PRIMARY KEY (username)
+) engine = INNODB DEFAULT character SET = utf8 COLLATE = utf8_general_ci;
+
+CREATE TABLE events (
+	event_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	creator VARCHAR(20) NOT NULL,
+	activity TINYTEXT NOT NULL,
+	year SMALLINT NOT NULL,
+	month ENUM ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec") NOT NULL,
+	day TINYINT UNSIGNED NOT NULL,
+	hr ENUM ("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12") NOT NULL,
+	min ENUM ("00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55") NOT NULL,
+	ampm ENUM ("am", "pm"),
+	PRIMARY KEY (event_id)
+) engine = INNODB DEFAULT character SET = utf8 COLLATE = utf8_general_ci;
+
+CREATE TABLE categories (
+	category VARCHAR(80) NOT NULL,
+	color VARCHAR(7) NOT NULL,
+	PRIMARY KEY (category)
+) engine = INNODB DEFAULT character SET = utf8 COLLATE = utf8_general_ci;
+
+UPDATE categories SET category="schoool" WHERE category="school" AND username="daniel";
+ALTER TABLE events ADD FOREIGN KEY (creator, category) REFERENCES categories (username, category);

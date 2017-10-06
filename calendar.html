@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Calendar Web App</title>
+	<link rel="stylesheet" type="text/css" href="calendarstyles.css" />
+</head>
+
+<body>
+	<h1 id="pageheader">Calendar Web App</h1>
+
+	<!-- div containing some sign-in and sign-up elements -->
+	<div id="userdivpt1">
+		<button type="button" id="signinbtn">Sign In</button>
+		<button type="button" id="signupbtn">Sign Up</button>	
+		<input type="text" placeholder="Username" maxlength="20" id="usernameinput" />
+		<input type="password" placeholder="Password" maxlength="20" id="passwordinput" />
+		<input type="text" placeholder="Desired username" maxlength="20" id="newusernameinput" />
+		<input type="password" placeholder="Password" maxlength="20" id="newpasswordinput" />
+		<input type="password" placeholder="Retype password" maxlength="20" id="retypepasswordinput" />
+		<h4 id="userdisp">[current user]</h4>
+	</div>
+	<!-- div containing other sign-in and sign-up elements -->
+	<div id="userdivpt2"> 
+		<button type="button" id="backbtn">Back</button>
+		<button type="button" id="actsigninbtn">Sign In</button>
+		<button type="button" id="actsignupbtn">Sign Up</button>
+		<button type="button" id="signoutbtn">Sign Out</button>
+	</div> 
+	<p id="message">[message]</p>
+
+	<h2 id="yearheader">[year]</h2>
+	<h3 id="monthheader">[month]</h3>
+
+	<div id="agendaviewbtndiv"><button type="button" id="agendaviewbtn">Agenda View</button></div>
+	<div id="calendarviewbtndiv"><button type="button" id="calendarviewbtn">Calendar View</button></div>
+
+	<div id="prevnextbtnsdiv">
+		<button type="button" id="prevbtn">Previous Month</button>
+		<button type="button" id="nextbtn">Next Month</button>
+	</div>
+
+	<!-- calendar table --> 
+	<table id="caltable">
+		<tr>
+			<th>Sunday</th>
+			<th>Monday</th>
+			<th>Tuesday</th>
+			<th>Wednesday</th>
+			<th>Thursday</th>
+			<th>Friday</th>
+			<th>Saturday</th>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+	<table id="agendatable"></table>
+
+	<!-- div that will contain a user's event categories -->
+	<div id="categoriesdivpt1"></div>
+
+	<!-- div for tools to edit a user's categories -->
+	<div id="categoriesdivpt2">
+		<div id="altercategoriesdivpt1">	
+			<button type="button" id="editcategorybtn">Edit Categories</button>
+			<button type="button" id="newcategorybtn">Create New Category</button>
+		</div>
+		<!-- div containing elements for editing existing category -->
+		<div id="altercategoriesdivpt2">
+			<label for="editcategoryselect">Choose category: </label>
+			<select id="editcategoryselect"></select>
+			<input type="text" placeholder="Edit category name" maxlength="30" id="editedcategorynameinput">
+			<button type="button" id="acteditcategorybtn">Save Changes</button>
+			<button type="button" id="deletecategorybtn">Delete Category</button>
+		</div>
+		<!-- div containing elements for creating new category -->
+		<div id="altercategoriesdivpt3">
+			<input type="text" placeholder="New Category" maxlength="30" id="newcategorynameinput">
+			<button type="button" id="actnewcategorybtn">Create</button>
+		</div>
+		<button type="button" id="categoriesbackbtn">Back</button>
+		<p id="editcategorieserrormessage">[error message]</p>
+	</div>
+
+	<!-- popup that appears when user clicks on calendar cell -->
+	<div id="popup">
+		<h4 id="popupheader">[Date]</h4>
+		<table id="eventtable"></table>
+		<div id="neweventdiv">
+			<input type="text" placeholder="New Event" maxlength="255" id="neweventnameinput">
+			<br>
+			<select id="hrselect">
+				<option selected="selected">hr</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+			</select>
+			<select id="minselect">
+				<option selected="selected">min</option>
+				<option>00</option>
+				<option>05</option>
+				<option>10</option>
+				<option>15</option>
+				<option>20</option>
+				<option>25</option>
+				<option>30</option>
+				<option>35</option>
+				<option>40</option>
+				<option>45</option>
+				<option>50</option>
+				<option>55</option>
+			</select>
+			<select id="ampmselect">
+				<option selected="selected">am</option>
+				<option>pm</option>
+			</select>
+			<br>
+			<label for="categoryselect" id="categoryselectlabel">Category:</label>
+			<select id="categoryselect"></select>
+			<br>
+			<button type="button" id="createeventbtn">Create Event</button>
+			<button type="button" id="editeventbtn">Save Changes</button>
+			<button type="button" id="deleteeventbtn">Delete Event</button>
+			<input type="text" placeholder="Share with user" maxlength="20" id="shareeventinput">
+			<button type="button" id="shareeventbtn">Share</button>
+			<br>
+			<p id="errormessage">[error message]</p>
+		</div>
+		
+	</div>
+
+	<script src="calendarcode.js"></script>
+</body>
+
+</html>
